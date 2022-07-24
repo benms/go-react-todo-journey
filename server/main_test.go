@@ -59,7 +59,7 @@ func TestRootRoute(t *testing.T) {
 			t.Errorf("expected error to be nil got %v", err)
 		}
 		if test.expectedCode == 200 {
-			assert.Equal(t, "Mega server", string(bodyData))
+			assert.Equal(t, "Todo backend server", string(bodyData))
 		}
 	}
 }

@@ -20,7 +20,7 @@ func HealthCheck(c *fiber.Ctx) error {
 }
 
 func Root(c *fiber.Ctx) error {
-	return c.SendString("Mega server")
+	return c.SendString("Todo backend server")
 }
 
 func AddTodo(c *fiber.Ctx) error {
