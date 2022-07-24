@@ -22,10 +22,14 @@ const fetcher = async (url: string) => {
 };
 
 function App() {
-  const {data, mutate} = useSWR<iTodo[]>("/todos", fetcher);
+  const {data, mutate, error} = useSWR<iTodo[]>("/todos", fetcher);
+
+  if (error) {
+    console.warn('Error: ', error.message);
+  }
 
   const addTodo = (newTodo: iTodo) => {
-    if (data && data.length) {
+    if (data) {
       mutate([...data, newTodo]);
     }
   };
