@@ -2,6 +2,7 @@ package controller
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -20,7 +21,7 @@ func HealthCheck(c *fiber.Ctx) error {
 }
 
 func Root(c *fiber.Ctx) error {
-	return c.SendString("Todo backend server")
+	return c.SendString(fmt.Sprintf("Todo backend server. Allow origin from - %s.", os.Getenv("ALLOW_ORIGIN_FROM")))
 }
 
 func AddTodo(c *fiber.Ctx) error {
