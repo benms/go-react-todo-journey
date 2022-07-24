@@ -3,4 +3,4 @@ run-server:
 test-server:
 	cd ./server && go test -v .
 run-clinet:
-	cd ./client && npm run dev
+	cd ./client && VITE_BACKEND_URL=http://localhost:4000/api npm run dev

@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import AddTodo from './components/AddTodo';
 import { CheckCircleFillIcon, TrashIcon } from '@primer/octicons-react';
 
-export const ENDPOINT = "http://localhost:4000/api"
+export const ENDPOINT = import.meta.env.VITE_BACKEND_URL
 export const JSON_HEADERS = { "Content-Type": "application/json; charset=UTF-8" };
 export interface iTodo {
   id: number;
