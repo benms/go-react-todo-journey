@@ -17,11 +17,11 @@ type Todo struct {
 var Todos = []Todo{}
 
 func HealthCheck(c *fiber.Ctx) error {
-	return c.SendString("OK")
+	return c.SendString(fmt.Sprintf("OK. Allow origin from - %s.", os.Getenv("ALLOW_ORIGIN_FROM")))
 }
 
 func Root(c *fiber.Ctx) error {
-	return c.SendString(fmt.Sprintf("Todo backend server. Allow origin from - %s.", os.Getenv("ALLOW_ORIGIN_FROM")))
+	return c.SendString("Todo backend server")
 }
 
 func AddTodo(c *fiber.Ctx) error {
